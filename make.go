@@ -112,7 +112,7 @@ func makeRecord(context *cli.Context) error {
 		if signResult["status"].(float64) != 200 {
 			return fmt.Errorf("sign failed\n %s", signRespBody)
 		} else {
-			fmt.Printf("%s sign %s success\n", cardNo, title)
+			fmt.Printf("%s watch %s success\n", cardNo, title)
 		}
 	}
 

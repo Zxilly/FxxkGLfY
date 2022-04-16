@@ -1,0 +1,31 @@
+name: Weekly Task
+
+on:
+  schedule:
+    - cron: "0 16 * * TUE"
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.18
+
+      - name: Build
+        run: go run github.com/Zxilly/FxxkGLfY make --c ENV
+        env:
+          GLFY_ID: ${{ secrets.GLFY_ID }}
+          GLFY_USER: ${{ secrets.GLFY_USER }}
+
+      - name: Notify
+        uses: ZNotify/action@master
+        with:
+          user_id: ${{ secrets.NOTIFY_ID }}
+          title: 青年大学习
+          content: 已完成青年大学习
