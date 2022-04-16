@@ -109,14 +109,14 @@ func makeRecord(context *cli.Context) error {
 		if err != nil {
 			return err
 		}
-		if signResult["status"] != 200 {
+		if signResult["status"].(float64) != 200 {
 			return fmt.Errorf("sign failed\n %s", signRespBody)
 		} else {
 			fmt.Printf("%s sign %s success\n", cardNo, title)
 		}
 	}
 
-	fmt.Printf("working on: %s \n", title)
+	fmt.Printf("all task on %s finished\n", title)
 
 	return nil
 }

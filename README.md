@@ -2,12 +2,23 @@
 
 江西青年大学习记录生成器
 
-# Usage
+# 用法
+
+## 安装
 
 ```bash
 go install github.com/Zxilly/FxxkGLfY@latest
 ```
-## Full Documentation
+
+## 运行
+
+```bash
+FxxkGlfY help
+FxxkGlfy cfg
+FxxkGlfY make
+```
+
+## 完整用法
 
 ```bash
 NAME:
