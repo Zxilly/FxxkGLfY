@@ -22,6 +22,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
-          md5sum: true
-          sha256sum: true
           extra_files: LICENSE README.md
+          executable_compression: upx
