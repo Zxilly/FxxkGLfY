@@ -1,4 +1,4 @@
-module FxxkGLfY
+module github.com/Zxilly/FxxkGLfY
 
 go 1.18
 
