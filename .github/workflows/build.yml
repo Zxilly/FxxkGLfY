@@ -22,9 +22,24 @@ jobs:
           - goos: darwin
             goarch: amd64
             goamd64: v3
+          - goos: windows
+            goarch: amd64
+            goamd64: v1
+          - goos: linux
+            goarch: amd64
+            goamd64: v1
+          - goos: darwin
+            goarch: amd64
+            goamd64: v1
         exclude:
           - goarch: "386"
             goos: darwin
+          - goarch: amd64
+            goos: linux
+          - goarch: amd64
+            goos: darwin
+          - goarch: amd64
+            goos: windows
 
     steps:
       - uses: actions/checkout@v3
