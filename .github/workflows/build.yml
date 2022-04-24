@@ -12,6 +12,16 @@ jobs:
       matrix:
         goos: [linux, windows, darwin]
         goarch: ["386", amd64, arm64]
+        include:
+          - goos: windows
+            goarch: amd64
+            goamd64: v3
+          - goos: linux
+            goarch: amd64
+            goamd64: v3
+          - goos: darwin
+            goarch: amd64
+            goamd64: v3
         exclude:
           - goarch: "386"
             goos: darwin
@@ -19,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: wangyoucao577/go-release-action@master
+      - uses: Zxilly/go-release-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
