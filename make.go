@@ -74,7 +74,8 @@ func makeRecord(context *cli.Context) error {
 		}
 	}(courseResp.Body)
 
-	courseRespBody = courseRespBody[len("var course_data = "):]
+	jsonStart := bytes.Index(courseRespBody, []byte("{"))
+	courseRespBody = courseRespBody[jsonStart:]
 
 	var courseData map[string]interface{}
 	err = json.Unmarshal(courseRespBody, &courseData)
