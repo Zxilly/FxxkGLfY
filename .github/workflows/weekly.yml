@@ -29,3 +29,11 @@ jobs:
           user_id: ${{ secrets.NOTIFY_ID }}
           title: 青年大学习
           content: 已完成青年大学习
+
+      - name: Notify Failure
+        if: failure()
+        uses: ZNotify/action@master
+        with:
+          user_id: ${{ secrets.NOTIFY_ID }}
+          title: 青年大学习失败
+          content: 青年大学习打卡失败
