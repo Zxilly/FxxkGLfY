@@ -58,7 +58,7 @@ func makeRecord(context *cli.Context) error {
 		users = append(users, user)
 	}
 
-	courseResp, err := http.Get("http://osscache.vol.jxmfkj.com/html/assets/js/course_data.js")
+	courseResp, err := http.Get(host + "/html/assets/js/course_data.js")
 	if err != nil {
 		return err
 	}
@@ -96,7 +96,7 @@ func makeRecord(context *cli.Context) error {
 		if err != nil {
 			return err
 		}
-		targetURL := "http://osscache.vol.jxmfkj.com/pub/vol/volClass/join?accessToken="
+		targetURL := host + "/pub/vol/volClass/join?accessToken="
 		signResp, err := http.Post(targetURL, "application/json", bytes.NewBuffer(payloadByte))
 		if err != nil {
 			return err

@@ -73,7 +73,7 @@ func configure(context *cli.Context) error {
 }
 
 func find(id string) (string, error) {
-	resp, err := http.Get("http://osscache.vol.jxmfkj.com/pub/vol/config/organization?pid=" + id)
+	resp, err := http.Get(host + "/pub/vol/config/organization?pid=" + id)
 	if err != nil {
 		return "", err
 	}
